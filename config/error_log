@@ -1,0 +1,12 @@
+[20-Jul-2025 18:50:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/loadmast/app.loadmasta.com/config/database.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/loadmast/app.loadmasta.com/config/database.php on line 19
+[20-Jul-2025 18:50:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/loadmast/app.loadmasta.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/loadmast/app.loadmasta.com/config/mail.php on line 17
+[20-Jul-2025 18:51:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/loadmast/app.loadmasta.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/loadmast/app.loadmasta.com/config/services.php on line 18
