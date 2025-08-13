@@ -6,7 +6,9 @@
     <title>Login - LoadMasta</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <!--@vite(['resources/css/app.css', 'resources/js/app.js'])-->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+<link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
 </head>
@@ -18,7 +20,7 @@
                 <div class="flex items-center mb-4 md:mb-8">
                     <span class="text-white text-xl md:text-2xl font-bold tracking-wide">Load Masta</span>
                 </div>
-                <img src="{{asset("truk.webp")}}" alt="Illustration" class="w-full h-40 md:h-72 object-contain mb-4 md:mb-8 mt-4 md:mt-8">
+                <img src="{{asset('truk.webp')}}" alt="Illustration" class="w-full h-40 md:h-72 object-contain mb-4 md:mb-8 mt-4 md:mt-8">
             </div>
             <div class="flex flex-col md:flex-row justify-between text-xs text-purple-200 mt-4 md:mt-6 space-y-2 md:space-y-0">
                 <span>Load Masta — Transportation Management System</span>
@@ -38,13 +40,29 @@
                             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="mb-2">
-                        <label class="block text-gray-700 mb-1" for="password">Password</label>
-                        <input id="password" name="password" type="password" placeholder="Password" class="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-                        @error('password')
-                            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
+                   <div class="mb-2 relative">
+    <label class="block text-gray-700 mb-1" for="password">Password</label>
+    
+    <input id="password" name="password" type="password" placeholder="Password"
+           class="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 pr-10"
+           required>
+
+    <!-- Eye icon button -->
+    <button type="button" onclick="togglePassword()" class="absolute right-3 top-9 text-gray-600">
+        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+            <path id="eyeOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
+        </svg>
+    </button>
+
+    @error('password')
+        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+    @enderror
+</div>
+
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center">
                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} id="remember" class="mr-2">
@@ -69,5 +87,28 @@
             </div>
         </div>
     </div>
+    <script>
+    function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const eyeIcon = document.getElementById("eyeIcon");
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            eyeIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.269-2.943-9.542-7a10.056 10.056 0 012.16-3.328m1.248-1.248A9.969 9.969 0 0112 5c4.478 0 8.269 2.943 9.542 7a10.05 10.05 0 01-4.034 5.302M15 12a3 3 0 11-6 0 3 3 0 016 0zM3 3l18 18" />
+            `;
+        } else {
+            passwordInput.type = "password";
+            eyeIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z" />
+            `;
+        }
+    }
+</script>
+
 </body>
 </html>

@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+#pickup-map,
+#delivery-map,
+#map {
+    position: relative;
+    z-index: 1; /* Lower than sticky/fixed headers or sidebars */
+    overflow: hidden; /* Prevent map overflow */
+    border-radius: 8px; /* Optional - rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional - shadow */
+}
+
+header.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+.leaflet-top,
+.leaflet-bottom {
+    z-index: 0 !important;
+}

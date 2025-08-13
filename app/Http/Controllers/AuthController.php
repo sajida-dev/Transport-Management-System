@@ -9,14 +9,12 @@ use Kreait\Firebase\Factory;
 use Illuminate\Support\Facades\Auth;
 
 
-
-
 class AuthController extends Controller
 {
     //
 
     public function loginDisplay(Request $requst)
-    
+
     {
         return view('admin.login');
     }
@@ -25,23 +23,21 @@ class AuthController extends Controller
     public function loginSubmit(Request $request)
     {
         $credentials = $request->only('email', 'password');
-    
+
         if (Auth::attempt($credentials)) {
             // Authentication passed...
             return redirect()->intended('/admin/dashboard');
         }
-        
+
         // Authentication failed...
         return ['email' => 'Invalid credentials'];
     }
-   
+
     public function logout()
     {
 
         Auth::logout();
 
         return redirect('/login');
-
     }
-
 }

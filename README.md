@@ -11,13 +11,13 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -35,19 +35,19 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 ### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+-   **[Vehikl](https://vehikl.com/)**
+-   **[Tighten Co.](https://tighten.co)**
+-   **[WebReinvent](https://webreinvent.com/)**
+-   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+-   **[64 Robots](https://64robots.com)**
+-   **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+-   **[Cyber-Duck](https://cyber-duck.co.uk)**
+-   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+-   **[Jump24](https://jump24.co.uk)**
+-   **[Redberry](https://redberry.international/laravel/)**
+-   **[Active Logic](https://activelogic.com)**
+-   **[byte5](https://byte5.de)**
+-   **[OP.GG](https://op.gg)**
 
 ## Contributing
 
@@ -64,3 +64,42 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## TODO
+
+### ✅ COMPLETED - User Management (Admin Panel)
+
+-   ✅ **Core Functionality**: Add/remove back office team members (User CRUD)
+-   ✅ **Role Assignment**: Assign user roles (Admin, Finance, Dispatcher, KYC Officer, etc.)
+-   ✅ **Role-Based Access Control**: Set RBAC (e.g., hide financial data from non-finance roles)
+-   ✅ **Logging**: View login activity and session logs for users
+-   ✅ **Technical Requirements**:
+    -   ✅ All migrations, models, and relationships follow Laravel conventions
+    -   ✅ Eloquent methods used (no raw queries)
+    -   ✅ DB transactions with try/catch blocks for robust error handling
+    -   ✅ Proper notifications and redirects (no direct JSON for UI routes)
+-   ✅ **UI/UX Improvements**:
+    -   ✅ Toastify notifications for all admin actions (success/error)
+    -   ✅ Clear explanations/help text for all form fields
+    -   ✅ Full width forms and tables with 3-column layout for large screens
+    -   ✅ Interactive multi-select for roles using chip design
+    -   ✅ All action buttons visible on user detail pages
+    -   ✅ User-friendly forms for non-technical users
+-   ✅ **Data Seeding**: Complete seeders with default role-permission assignments
+-   ✅ **Code Quality**: Fully functional with no errors, following Laravel best practices
+
+### 🔄 IN PROGRESS - Additional Features
+
+-   🔄 **Role Management**: Create, edit, and manage roles with permissions
+-   🔄 **Permission Management**: Create, edit, and assign permissions to roles
+-   🔄 **Advanced RBAC**: Implement middleware for role-based access control
+-   🔄 **Activity Logging**: Enhanced activity tracking and reporting
+-   🔄 **User Sessions**: Real-time session management and monitoring
+
+### 📋 PENDING - Future Enhancements
+
+-   📋 **Bulk Operations**: Bulk user import/export, bulk role assignment
+-   📋 **Advanced Search**: Filter users by roles, status, date ranges
+-   📋 **Audit Trail**: Comprehensive audit logging for all user actions
+-   📋 **Two-Factor Authentication**: Enhanced security for admin accounts
+-   📋 **API Integration**: RESTful API for user management operations

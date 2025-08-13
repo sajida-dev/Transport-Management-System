@@ -38,5 +38,8 @@ return [
     'firebase' => [
         'credentials' => storage_path(base_path('google-services.json')),
     ],
+    'wialon' => [
+        'token' => env('WIALON_API_TOKEN'),
+    ],
 
 ];
